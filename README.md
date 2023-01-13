@@ -43,4 +43,5 @@ example:
 
 to use it,
 include the header -> #include "my_malloc_free/my_malloc_free.h"
-and compile it like this: gcc my_malloce_free/my_malloc_free.c your_file.c
+and compile it like this: \
+&emsp;&emsp;gcc my_malloce_free/my_malloc_free.c your_file.c
