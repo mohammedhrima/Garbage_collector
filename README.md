@@ -9,7 +9,7 @@ my_free(void *ptr, int free_all)
 my_malloc: is like malloc you give it the size you want to allocate 
 	
 my_free:   is like default free
-
+	
 my_free_all: function that free all not freed allocated spaces
 
 example:</br>
