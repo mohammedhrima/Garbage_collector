@@ -6,11 +6,9 @@ my_malloc(site_t size_to_allocate); </br>
 my_free(void *ptr, int free_all)
 
 </br>
-my_malloc: is like malloc you give it the size you want to allocate 
-	
-my_free:   is like default free
-	
-my_free_all: function that free all not freed allocated spaces
+my_malloc: is like malloc you give it the size you want to allocate</br>
+my_free:   is like default free</br>
+my_free_all: function that free all not freed allocated spaces</br>
 
 example:</br>
 &emsp;&emsp;char ***ptr = my_malloc(1000);</br>
