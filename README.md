@@ -41,7 +41,7 @@ example:
     my_free_all()
 
 
-to use it,
-include the header -> #include "my_malloc_free/my_malloc_free.h"
-and compile it like this: \
+to use it:
+&emsp;&emsp;&emsp;&emsp;include the header -> #include "my_malloc_free/my_malloc_free.h"
+&emsp;&emsp;&emsp;&emsp;and compile it like this: \
 &emsp;&emsp;&emsp;&emsp;gcc my_malloce_free/my_malloc_free.c your_file.c
