@@ -1,4 +1,6 @@
 
+I built "my_malloc" to solve leaks problem and double free \
+\
 to check the program:
 	run make
 
