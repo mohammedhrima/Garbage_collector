@@ -1,5 +1,12 @@
 #include "my_malloc_free.h"
 
+typedef struct s_mal
+{
+	unsigned long address;
+	struct s_mal *next;
+	int is_free;
+} t_mal;
+
 void *ft_calloc(size_t count, size_t size)
 {
 	void *arr;
