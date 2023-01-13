@@ -2,7 +2,7 @@
 to check the program:
 	run make
 	
-my_malloc(site_t size_to_allocate);
+my_malloc(site_t size_to_allocate); </br>
 my_free(void *ptr, int free_all)
 
 my_malloc: is like malloc you give it the size you want to allocate 
