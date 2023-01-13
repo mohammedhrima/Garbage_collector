@@ -8,11 +8,13 @@ my_free(void *ptr, int free_all)
 </br>
 my_malloc: is like malloc you give it the size you want to allocate 
 	
-my_free:   is like default free but has a second argument, in case you want to free all allocated space once set free_all to 1 else set it to 0
+my_free:   is like default free
+
+my_free_all: function that free all not freed allocated spaces
 
 example:</br>
 &emsp;&emsp;char ***ptr = my_malloc(1000);</br>
-&emsp;&emsp;my_free(ptr, 0)
+&emsp;&emsp;my_free(ptr)
 
 </br></br>
 to use it,

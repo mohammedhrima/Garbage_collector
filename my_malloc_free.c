@@ -79,7 +79,7 @@ void* my_malloc(size_t size)
 	return (ptr);
 }
 
-void my_free(void *ptr, int free_all)
+void my_free(void *ptr)
 {
 	t_mal *var;
 	unsigned long address;
@@ -88,14 +88,27 @@ void my_free(void *ptr, int free_all)
 	var = *my_allocated_list();
 	while (var)
 	{
-		if (free_all && !address)
+		if (var->address == address && !var->is_free)
 		{
 			free((void *)(var->address));
 			ptr = (void *)(var->address);
 			ptr = NULL;
 			var->is_free = 1;
+			return;
 		}
-		else if (var->address == address && !var->is_free)
+		var = var->next;
+	}
+}
+
+void my_free_all(void)
+{
+	t_mal *var;
+	void *ptr;
+
+	var = *my_allocated_list();
+	while (var)
+	{
+		if (!var->is_free)
 		{
 			free((void *)(var->address));
 			ptr = (void *)(var->address);
