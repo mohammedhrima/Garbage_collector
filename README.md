@@ -12,7 +12,7 @@ my_free_all: function that free all not freed allocated spaces</br>
 
 example:</br>
 &emsp;&emsp;char ***ptr = my_malloc(1000);</br>
-&emsp;&emsp;my_free(ptr)
+&emsp;&emsp;my_free(ptr) //or my_free_all()
 
 </br></br>
 to use it,
