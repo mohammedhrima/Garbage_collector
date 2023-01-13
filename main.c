@@ -26,16 +26,9 @@ void func(void)
 	to check the program:
 		run make
 	
-	my_malloc(site_t size_to_allocate);
-	my_free(void *ptr, int free_all)
-
-	my_malloc: is like malloc you give it the size you want to allocate 
-	
-	my_free:   is like default free but has a second argument,
-			   in case you want to free all allocated space once set free_all to 1 else set it to 0
-			   		example:
-						char ***ptr = my_malloc(1000);
-						my_free(ptr, 0)
+	my_malloc: is like malloc you give it the size you want to allocate
+	my_free: is like default free
+	my_free_all: function that free all not freed allocated spaces
 */
 
 int main()
