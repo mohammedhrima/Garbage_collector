@@ -28,6 +28,7 @@ void *ft_calloc(size_t count, size_t size)
 	return (arr);
 }
 
+//new_var function to allocate t_mal varibale and return it
 t_mal *new_var(unsigned long address)
 {
 	t_mal *var;
@@ -48,6 +49,7 @@ t_mal *last_var(t_mal *lst)
 	return (lst);
 }
 
+// add_back function look for the last element in the node and add the new node to it
 void add_back(t_mal **var, t_mal *new_var)
 {
 	t_mal *ptr;
@@ -64,31 +66,37 @@ void add_back(t_mal **var, t_mal *new_var)
 // to be used as global varibales
 t_mal **my_allocated_list(void)
 {
-	static t_mal *list;
-	if (!list)
-		list = new_var(0);
-	return (&list);
+	static t_mal *list; // declare the head of the linked list , when declaring pointer as static it automatically takes NULL as value
+	if (!list) // first time I call "my_allocate_list", 'list' varibale will be intialized to null
+		list = new_var(0);//that's why I set it here
+	return (&list); // then I return it's pointer
 }
 
-void* my_malloc(size_t size)
+void *my_malloc(size_t size)
 {
 	void *ptr;
-
+	// Allocate the needed size and feed it with 0
 	ptr = ft_calloc(1, size);
+	// then add it to end of the linked list
+	//"my_allocated_list()"  function is used like a global variable
+	//"new_var" is a function that allocate t_mal data type in the heap and return its value
 	add_back(my_allocated_list(), new_var((unsigned long)ptr));
 	return (ptr);
 }
 
-void my_free(void *ptr)
+// my_free_all function take the address of pointer to free and typecast it to unsigned long
+// because I save the address as unsigned long varibale inside the linked list
+// check my_malloc_free.h
+// it work's like ft_lstmap in Libft
+void my_free_all(void)
 {
 	t_mal *var;
-	unsigned long address;
+	void *ptr;
 
-	address = (unsigned long)ptr;
 	var = *my_allocated_list();
-	while (var)
-	{
-		if (var->address == address && !var->is_free)
+	while (var) // keep tracking the element of nodes and free them it they aren't freed
+	{			// then set them as freed
+		if (!var->is_free)
 		{
 			free((void *)(var->address));
 			ptr = (void *)(var->address);
@@ -100,15 +108,17 @@ void my_free(void *ptr)
 	}
 }
 
-void my_free_all(void)
+// is like my_free_all but it only free the selected pointer
+void my_free(void *ptr)
 {
 	t_mal *var;
-	void *ptr;
+	unsigned long address;
 
+	address = (unsigned long)ptr;
 	var = *my_allocated_list();
 	while (var)
 	{
-		if (!var->is_free)
+		if (var->address == address && !var->is_free)
 		{
 			free((void *)(var->address));
 			ptr = (void *)(var->address);

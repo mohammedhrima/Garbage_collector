@@ -1,20 +1,44 @@
 
 to check the program:
 	run make
-	
-my_malloc(site_t size_to_allocate); </br>
-my_free(void *ptr, int free_all)
 
-</br>
-my_malloc: is like malloc you give it the size you want to allocate</br>
-my_free:   is like default free</br>
-my_free_all: function that free all not freed allocated spaces</br>
+Prototype: \
+&emsp;&emsp;my_malloc(site_t size_to_allocate) \
+&emsp;&emsp;my_free(void *ptr) \
+&emsp;&emsp;my_free_all(void)
 
-example:</br>
-&emsp;&emsp;char ***ptr = my_malloc(1000);</br>
-&emsp;&emsp;my_free(ptr) //or my_free_all()
+I created a struct named "t_mal": \
+    &emsp;&emsp;typedef struct s_mal\
+    &emsp;&emsp;{\
+	    &emsp;&emsp;&emsp;unsigned long address;\
+	    &emsp;&emsp;&emsp;struct s_mal *next;\
+	    &emsp;&emsp;&emsp;int is_free;\
+    &emsp;&emsp;} t_mal;
 
-</br></br>
+- unsigned long address : keep the address of allocate space
+- next: is a pointer to the next node in the linked list
+- is_free: everytime you call "my_free" function, it free the allocated space and set "is_free" to true to avoid double free
+
+
+my_malloc: is built using malloc, you give it the size you want to allocate, \
+&emsp;&emsp;&emsp;&emsp;&emsp;it allocate it and add it to the linked list.\ 
+
+my_free:   is build using free, it frees the allocated space by "my_malloc" and set the is_free to 1 int the struct taht contains its address \
+
+my_free_all: function that free allocated spaces by "my_malloc"
+
+the head of the node is declared as static variable, that means it's stored in the data segment of the memory,
+when the program exit it automatically free the values pointed by the head
+
+example:
+    
+    char ***ptr = my_malloc(1000);
+    //to free call
+    my_free(ptr)
+    or
+    my_free_all()
+
+
 to use it,
 include the header -> #include "my_malloc_free/my_malloc_free.h"
 and compile it like this: gcc my_malloce_free/my_malloc_free.c your_file.c
