@@ -25,7 +25,7 @@ I created a struct named "t_mal": \
 my_malloc: is built using malloc, you give it the size you want to allocate, \
 &emsp;&emsp;&emsp;&emsp;&emsp;it allocate it and add it to the linked list.\ 
 
-my_free:   is build using free, it frees the allocated space by "my_malloc" and set the is_free to 1 int the struct that contains its address \
+my_free:   is build using free, it frees the allocated space by "my_malloc" and set the is_free to 1 int the struct that contains its address 
 
 my_free_all: function that free all previous allocated spaces by "my_malloc"
 
