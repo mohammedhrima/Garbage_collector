@@ -1,5 +1,5 @@
 
-I built "my_malloc" to solve leaks problem and double free \
+I built "my_malloc" to solve leaks problems and double free \
 \
 to check the program:
 	run make
