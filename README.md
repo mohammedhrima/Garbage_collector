@@ -5,8 +5,6 @@ so you don't have to worry about memory leaks,\
 buuuut !!! if you want to 😒😒, you can use "my_free" or "my_free_all" (I built them for programs that run continuously to avoid memory overflow)
 \
 \
-to check the program:
-	run make
 
 Prototype: \
 &emsp;&emsp;my_malloc(size_t size_to_allocate) \
