@@ -27,7 +27,7 @@ my_malloc: is built using malloc, you give it the size you want to allocate, \
 
 my_free:   is build using free, it frees the allocated space by "my_malloc", takes pointer as parameter
 
-my_free_all: function that free all previous allocated spaces by "my_malloc"
+my_free_all: function that free all previous allocated spaces by "my_malloc", if they aren't freed
 
 the head of the node is declared as static variable, that means it's stored in the data segment of the memory,
 when the program exit it automatically free the values pointed by the head
