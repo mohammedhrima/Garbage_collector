@@ -54,7 +54,7 @@ compile it like this: gcc my_malloce_free/my_malloc_free.c your_file.c
 \
 ![001](https://user-images.githubusercontent.com/71414472/212447316-2f09d29c-c43c-4607-964e-178c93f69fc6.png) \
 \
-![002](https://user-images.githubusercontent.com/71414472/212447318-6fe7a9e5-2bd8-4593-aa89-8ca891c93ccc.png) \
+![002](https://user-images.githubusercontent.com/71414472/212447477-0bac06ba-71a3-4894-9f8c-652302f84ce7.png) \
 \
 ![003](https://user-images.githubusercontent.com/71414472/212447320-93845755-9044-4ed9-a00b-77b69d27da65.png) \
 \
