@@ -4,14 +4,14 @@ I built "my_malloc" to solve leaks problems using linked list\
 so you don't have to worry about memory leaks,\
 buuuut !!! if you want to 😒😒, you can use "my_free" or "my_free_all" (I built them for programs that run continuously to avoid memory overflow)
 
-===================================================================================================================================
+==================================================================
 
 Prototype: \
 &emsp;&emsp;my_malloc(size_t size_to_allocate) \
 &emsp;&emsp;my_free(void *ptr) \
 &emsp;&emsp;my_free_all(void)
 
-===================================================================================================================================
+==================================================================
 
 I created a struct named "t_mal": \
     &emsp;&emsp;typedef struct s_mal\
@@ -25,7 +25,7 @@ I created a struct named "t_mal": \
 - next: is a pointer to the next node in the linked list
 - is_free: everytime you call "my_free" function, it free the allocated space and set "is_free" to true to avoid double free
 
-===================================================================================================================================
+==================================================================
 
 - my_malloc: is built using malloc, you give it the size you want to allocate, \
 &emsp;&emsp;&emsp;&emsp;&emsp;it allocate it, add it to the linked list and returns its address.
@@ -34,12 +34,12 @@ I created a struct named "t_mal": \
 
 - my_free_all: function that free all previous allocated spaces by "my_malloc", if they aren't freed by "my_free"
 
-===================================================================================================================================
+==================================================================
 - how my_malloc works: \
 I created a linked list , its head is declared as static variable, that means it's stored in the data segment of the memory,
 when the program exit it automatically free the values pointed by it
 
-===================================================================================================================================
+==================================================================
 - how to use my_malloc: #include "my_malloc_free/my_malloc_free.h" \
 use it like malloc:
 	char *ptr0 = my_malloc(1000);
@@ -48,9 +48,9 @@ use it like malloc:
 
 compile it like this: gcc my_malloce_free/my_malloc_free.c your_file.c
 
-===================================================================================================================================
+==================================================================
 - I added main.c , it includes a main in case you want to test the functions before using them
-===================================================================================================================================
+==================================================================
 \
 ![001](https://user-images.githubusercontent.com/71414472/212447316-2f09d29c-c43c-4607-964e-178c93f69fc6.png) \
 ![002](https://user-images.githubusercontent.com/71414472/212447318-6fe7a9e5-2bd8-4593-aa89-8ca891c93ccc.png) \
