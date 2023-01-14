@@ -47,7 +47,7 @@ use it like malloc: \
 &emsp;&emsp;char **ptr1 = my_malloc(1000); \
 &emsp;&emsp;char ***ptr2 = my_malloc(1000); \
 &emsp;&emsp;int *ptr3 = my_malloc(1000); \
-&emsp;&emsp;... \
+&emsp;&emsp;...
 - compile it like this: gcc my_malloce_free/my_malloc_free.c your_file.c
 
 ==================================================================
