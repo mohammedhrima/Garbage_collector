@@ -84,9 +84,8 @@ void *my_malloc(size_t size)
 	return (ptr);
 }
 
-// my_free_all function take the address of pointer to free and typecast it to unsigned long
-// because I save the address as unsigned long varibale inside the linked list
-// check my_malloc_free.h
+// my_free_all loop in the linked list check if the address savd in node is freed
+// if not it frees it
 // it work's like ft_lstmap in Libft
 void my_free_all(void)
 {
