@@ -41,3 +41,5 @@ to use it: \
 &emsp;&emsp;&emsp;&emsp;include the header -> #include "my_malloc_free/my_malloc_free.h" \
 &emsp;&emsp;&emsp;&emsp;and compile it like this: \
 &emsp;&emsp;&emsp;&emsp;gcc my_malloce_free/my_malloc_free.c your_file.c
+
+- I added main.c , it includes a main in case you want to test it before using it
