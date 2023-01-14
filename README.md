@@ -2,12 +2,7 @@
 I built "my_malloc" to solve leaks problems using linked list\
 "my_malloc" function allocate a space in the heap and frees it at the end of the program\
 so you don't have to worry about memory leaks,\
-buuuut !!! if you want to 😒😒, you can use "my_free" or "my_free_all" (I built them for programs that run continuously to avoid memory overflow)
-```diff
-- This is a red colored line
-+ This is a green colored line
-@@ This is a purple colored line @@
-```
+buuuut !!! if you want to 😒😒, you can use "my_free" or "my_free_all" ```diff- (I built them for programs that run continuously to avoid memory overflow)```
 \
 to check the program:
 	run make
