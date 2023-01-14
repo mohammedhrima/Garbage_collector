@@ -5,7 +5,7 @@ to check the program:
 	run make
 
 Prototype: \
-&emsp;&emsp;my_malloc(site_t size_to_allocate) \
+&emsp;&emsp;my_malloc(size_t size_to_allocate) \
 &emsp;&emsp;my_free(void *ptr) \
 &emsp;&emsp;my_free_all(void)
 
