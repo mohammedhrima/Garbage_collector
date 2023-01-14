@@ -42,11 +42,12 @@ when the program exit it automatically free the values pointed by it
 
 ==================================================================
 - how to use my_malloc: #include "my_malloc_free/my_malloc_free.h" \
-use it like malloc:
-	char *ptr0 = my_malloc(1000);
-	char **ptr1 = my_malloc(1000);
-    	char ***ptr2 = my_malloc(1000);
-
+use it like malloc: \
+&emsp;&emsp;char *ptr0 = my_malloc(1000); \
+&emsp;&emsp;char **ptr1 = my_malloc(1000); \
+&emsp;&emsp;char ***ptr2 = my_malloc(1000); \
+&emsp;&emsp;int *ptr3 = my_malloc(1000); \
+&emsp;&emsp;... \
 - compile it like this: gcc my_malloce_free/my_malloc_free.c your_file.c
 
 ==================================================================
