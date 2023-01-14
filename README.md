@@ -3,7 +3,7 @@ I built "my_malloc" to solve leaks problems using linked list\
 "my_malloc" function allocate a space in the heap and frees it at the end of the program\
 so you don't have to worry about memory leaks,\
 buuuut !!! if you want to 😒😒, you can use "my_free" or "my_free_all" (I built them for programs that run continuously to avoid memory overflow)
-
+- ![#f03c15](https://via.placeholder.com/15/f03c15/000000?text=+) `#f03c15`
 \
 to check the program:
 	run make
