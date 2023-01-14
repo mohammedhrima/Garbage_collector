@@ -2,7 +2,7 @@
 
 typedef struct s_mal
 {
-	unsigned long address;
+	uintptr_t address;
 	struct s_mal *next;
 	int is_free;
 } t_mal;
@@ -29,7 +29,7 @@ void *ft_calloc(size_t count, size_t size)
 }
 
 //new_var function to allocate t_mal varibale and return it
-t_mal *new_var(unsigned long address)
+t_mal *new_var(uintptr_t address)
 {
 	t_mal *var;
 
@@ -80,7 +80,7 @@ void *my_malloc(size_t size)
 	// then add it to end of the linked list
 	//"my_allocated_list()"  function is used like a global variable
 	//"new_var" is a function that allocate t_mal data type in the heap and return its value
-	add_back(my_allocated_list(), new_var((unsigned long)ptr));
+	add_back(my_allocated_list(), new_var((uintptr_t)ptr));
 	return (ptr);
 }
 
@@ -111,9 +111,9 @@ void my_free_all(void)
 void my_free(void *ptr)
 {
 	t_mal *var;
-	unsigned long address;
+	uintptr_t address;
 
-	address = (unsigned long)ptr;
+	address = (uintptr_t)ptr;
 	var = *my_allocated_list();
 	while (var)
 	{
