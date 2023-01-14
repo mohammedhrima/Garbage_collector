@@ -29,9 +29,9 @@ I created a struct named "t_mal": \
 my_malloc: is built using malloc, you give it the size you want to allocate, \
 &emsp;&emsp;&emsp;&emsp;&emsp;it allocate it, add it to the linked list and returns its address.
 
-my_free:   is build using free, it frees the allocated space by "my_malloc", takes pointer as parameter (you don't have to use it, it's opional)
+my_free:   is build using free, it frees the allocated space by "my_malloc" and set it as NULL, takes pointer as parameter
 
-my_free_all: function that free all previous allocated spaces by "my_malloc", if they aren't freed (you don't have to use it, it's opional)
+my_free_all: function that free all previous allocated spaces by "my_malloc", if they aren't freed by "my_free"
 
 the head of the node is declared as static variable, that means it's stored in the data segment of the memory,
 when the program exit it automatically free the values pointed by the head
