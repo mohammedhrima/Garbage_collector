@@ -47,7 +47,7 @@ use it like malloc:
 	char **ptr1 = my_malloc(1000);
     	char ***ptr2 = my_malloc(1000);
 
-compile it like this: gcc my_malloce_free/my_malloc_free.c your_file.c
+- compile it like this: gcc my_malloce_free/my_malloc_free.c your_file.c
 
 ==================================================================
 - I added main.c , it includes a main in case you want to test the functions before using them \
