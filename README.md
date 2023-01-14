@@ -1,5 +1,5 @@
 
-I built "my_malloc", "my_free", "my_free_all" to solve leaks and double free problems\
+I built "my_malloc", "my_free", "my_free_all" to solve leaks and double free problems using linked list\
 \
 to check the program:
 	run make
