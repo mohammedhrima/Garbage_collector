@@ -1,5 +1,9 @@
 
-I built "my_malloc", "my_free", "my_free_all" to solve leaks and double free problems using linked list\
+I built "my_malloc" to solve leaks problems using linked list\
+my_malloc function allocate a space in the heap and frees it at the end of the program
+so you don't have to worry about memory leak,
+buuuut !!! if you want to 😒😒, you can use "my_free" or "my_free_all" (I built them for program that runs continuously)
+
 \
 to check the program:
 	run make
@@ -25,20 +29,15 @@ I created a struct named "t_mal": \
 my_malloc: is built using malloc, you give it the size you want to allocate, \
 &emsp;&emsp;&emsp;&emsp;&emsp;it allocate it, add it to the linked list and returns its address.
 
-my_free:   is build using free, it frees the allocated space by "my_malloc", takes pointer as parameter
+my_free:   is build using free, it frees the allocated space by "my_malloc", takes pointer as parameter (you don't have to use it, it's opional)
 
-my_free_all: function that free all previous allocated spaces by "my_malloc", if they aren't freed
+my_free_all: function that free all previous allocated spaces by "my_malloc", if they aren't freed (you don't have to use it, it's opional)
 
 the head of the node is declared as static variable, that means it's stored in the data segment of the memory,
 when the program exit it automatically free the values pointed by the head
 
-example:
-    
+example:    
     char ***ptr = my_malloc(1000);
-    //to free the allocated space call
-    my_free(ptr)
-    or
-    my_free_all()
 
 
 to use it: \
