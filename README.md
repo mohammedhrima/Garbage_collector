@@ -4,8 +4,8 @@
 
 - So I built "my_malloc" to solve this problems
 
-- my_malloc: function allocate a spaces in the heap and frees them when main exit automatically (you don't have to free them)
-- my_free / my_free_all: free allocated spaces (in case you need them)
+- my_malloc: function allocate a spaces in the heap (with malloc) and frees them when main exit
+- my_free / my_free_all: free allocated spaces (for programs that keep running and allocate space continually)
 
 ## Usage :
 
@@ -18,15 +18,12 @@ char  **ptr2 =  (char**)my_malloc(5000);
 char ***ptr3 = (char***)my_malloc(300);
 ```
 
-- in case you faced memory over flow problem use: (they are already protected from double free ;) )
-```bash
+```javascript
     my_free(void *ptr); // to free specific address
-    or 
     my_free_all(void); // to free all allocated spaces with my_malloc
 ```
 
 ## Running Tests
-
 
 - Clone the repo
 ```bash
