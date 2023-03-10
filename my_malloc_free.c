@@ -6,14 +6,15 @@
 // memory leak means allocating
 // space in heap and losing its address
 
-// get the head of linked list
 // static varibale are stored in data segment in memory
-// data segment is the last space that get freed in memory
-// when main exit
-// once the os find that the static varibale is pointing
-// on a memory on the heap
-// it automatically keep moving throw the linked list
-// and free the allocated space
+// data segment is the last space that get freed in memory when main exit
+
+// when main is exiting and find that there is a static varibale pointing
+// on a memory on the heap, it automatically keep moving throw the linked list
+// and free the allocated space one by one
+
+
+// return the head of linked list
 t_mal	*the_head(void)
 {
 	static t_mal	*head;
