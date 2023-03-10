@@ -16,12 +16,26 @@ void   *ptr0 =   (void*)my_malloc(1000);
 int    *ptr1 =    (int*)my_malloc(2000);
 char  **ptr2 =  (char**)my_malloc(5000);
 char ***ptr3 = (char***)my_malloc(300);
+                        my_free(ptr0);
+                        my_free((void *)ptr1);
+                        my_free((void *)ptr2);
+
+void * , void**, void *** ..., are just pointer or an address stored in memory, means they have the same size
+the number of '*' means only the level of pointer so compiler know many steps will do while navigate in the lowest level
+in this data type, example:
+    char *str -> str[2] = 'c'
+        move 2*sizeof(char) steps or we can say move 2 * 1byte steps
+        and change the value stored there
+        
+    char **arr -> arr[2] = "hi"
+        move 2*sizeof(char*) steps or we can say move 2 * 8bytes steps 
+        and change the value stored there
+        
+        !!! size of pointer depends computer architecture !!!
+        In 32-bit computer machine sizeof(pointer) is 4 bytes
+        In 64-bit computer machine sizeof(pointer) is 8 bytes
 ```
 
-```javascript
-    my_free(void *ptr); // to free specific address
-    my_free_all(void); // to free all allocated spaces with my_malloc
-```
 
 ## Running Tests
 
