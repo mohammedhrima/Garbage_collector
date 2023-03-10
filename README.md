@@ -5,7 +5,7 @@
 - So I built "my_malloc" to solve this problems
 
 - my_malloc: function allocate a spaces in the heap and frees them when main exit automatically (you don't have to free them)
-- my_free / my_free_all: free allocated spaces and set them to NULL (in case you need them)
+- my_free / my_free_all: free allocated spaces (in case you need them)
 
 ## Usage :
 
