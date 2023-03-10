@@ -2,7 +2,7 @@
 
 - memory leaks sucks
 
-- So I built "my_malloc" to solve this problems
+- So I built "my_malloc" to solve this problem
 
 - my_malloc: function allocate a spaces in the heap and frees them when main exit automatically (you don't have to free them)
 
