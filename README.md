@@ -18,7 +18,7 @@ char  **ptr2 =  (char**)my_malloc(5000);
 char ***ptr3 = (char***)my_malloc(300);
 ```
 
-- in case you faced memory over flow problem use: (they are allready protected from double free ;) )
+- in case you faced memory over flow problem use: (they are already protected from double free ;) )
 ```bash
     my_free(void *ptr); // to free specific address
     or 
