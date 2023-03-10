@@ -31,7 +31,7 @@ void	func(void)
 
 /*
 	to check the program:
-		run make
+		make
 
 	my_malloc: is like malloc you give it the size you want to allocate
 	my_free: is like default free
