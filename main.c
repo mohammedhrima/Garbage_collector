@@ -1,10 +1,12 @@
 #include "my_malloc_free.h"
 #include <stdio.h>
 
-void func(void)
+void	func(void)
 {
-	int i;
-	char *str = my_malloc(1000);
+	int		i;
+	char	*str;
+
+	str = (char *)my_malloc(1000);
 	i = 0;
 	while (i < 20)
 		str[i++] = 'a';
@@ -36,10 +38,10 @@ void func(void)
 	my_free_all: function that free all not freed allocated spaces
 */
 
-int main()
+int	main(void)
 {
 	func();
-	// system("leaks a.out");
+	system("leaks a.out");
 	// while(1);
 	return (0);
 }

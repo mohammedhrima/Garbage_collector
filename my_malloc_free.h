@@ -11,14 +11,21 @@
 /* ************************************************************************** */
 
 #ifndef MY_MALLOC_H
-#define MY_MALLOC_H
+# define MY_MALLOC_H
 
-#include "unistd.h"
-#include "limits.h"
-#include "stdlib.h"
+# include "limits.h"
+# include "unistd.h"
+# include <stdlib.h>
 
-void* my_malloc(size_t size);
-void my_free(void *ptr);
-void my_free_all(void);
+typedef struct s_mal
+{
+	int				index;
+	uintptr_t		ptr;
+	struct s_mal	*next;
+}					t_mal;
+
+uintptr_t			my_malloc(int size);
+void				my_free(void *address);
+void				my_free_all(void);
 
 #endif
