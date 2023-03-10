@@ -1,5 +1,44 @@
 ## my_malloc_free
 
+- memory leaks sucks
+
+- So I built "my_malloc" to solve this problems
+
+- my_malloc: function allocate a space in the heap and frees it when main exit automatically
+
+## Usage :
+
+```javascript
+#include "my_malloc_free/my_malloc_free.h"
+
+void   *ptr0 =   (void*)my_malloc(1000);
+int    *ptr1 =    (int*)my_malloc(2000);
+char  **ptr2 =  (char**)my_malloc(5000);
+char ***ptr3 = (char***)my_malloc(300);
+```
+
+- in case you faced memory over flow problem use:
+```bash
+    my_free(void *ptr); // to free specific address
+    or 
+    my_free_all(void); // to free all allocated spaces with my_malloc
+```
+
+## Running Tests
+
+
+- Clone the repo
+```bash
+git clone https://github.com/mohammedhrima/my_malloc_free.git
+```
+
+- To run tests, run the following command
+```bash
+gcc my_malloce_free/my_malloc_free.c file.c (don't forget #include "my_malloc_free/my_malloc_free.h")
+```
+
+## my_malloc_free
+
 - memory leaks and double free suck
 
 - So I built "my_malloc" to solve this problems
@@ -19,10 +58,13 @@ char ***ptr3 = (char***)my_malloc(300);
                         my_free(ptr0);
                         my_free((void *)ptr1);
                         my_free((void *)ptr2);
+```
 
-void * , void**, void *** ..., are just pointer or an address stored in memory, means they have the same size
-the number of '*' means only the level of pointer so compiler know many steps will do while navigate in the lowest level
-in this data type, example:
+```bash
+- void * , void**, void *** ..., are an addresses (for an allocate space in memory)
+- Those addresses are also stored in memory and have the same size
+- The number of '*' means only the level of pointer so compiler know many steps will do while navigate in the lowest level
+of this data type, example:
     char *str -> str[2] = 'c'
         move 2*sizeof(char) steps or we can say move 2 * 1byte steps
         and change the value stored there
