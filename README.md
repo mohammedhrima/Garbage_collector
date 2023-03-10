@@ -1,57 +1,42 @@
+## my_malloc_free
 
-I built "my_malloc" to solve leaks problems using linked list\
-"my_malloc" function allocate a space in the heap and frees it at the end of the program\
-so you don't have to worry about memory leaks,\
-buuuut !!! if you want to 😒😒, you can use "my_free" or "my_free_all" (I built them for programs that run continuously to avoid memory overflow)
-and they are protected from the double free
+- memory leaks sucks
 
-==================================================================
+- So I built "my_malloc" to solve this problems
 
-Prototype: \
-&emsp;&emsp;my_malloc(size_t size_to_allocate) \
-&emsp;&emsp;my_free(void *ptr) \
-&emsp;&emsp;my_free_all(void)
+- my_malloc: function allocate a space in the heap and frees it when main exit automatically
 
-==================================================================
+## Usage :
 
-I created a struct named "t_mal": \
-    &emsp;&emsp;typedef struct s_mal\
-    &emsp;&emsp;{\
-	    &emsp;&emsp;&emsp;unsigned long address;\
-	    &emsp;&emsp;&emsp;struct s_mal *next;\
-	    &emsp;&emsp;&emsp;int is_free;\
-    &emsp;&emsp;} t_mal;
+```javascript
+#include "my_malloc_free/my_malloc_free.h"
 
-- unsigned long address : keep the address of allocate space
-- next: is a pointer to the next node in the linked list
-- is_free: everytime you call "my_free" function, it free the allocated space and set "is_free" to true to avoid double free
+void   *ptr0 =   (void*)my_malloc(1000);
+int    *ptr1 =    (int*)my_malloc(2000);
+char  **ptr2 =  (char**)my_malloc(5000);
+char ***ptr3 = (char***)my_malloc(300);
+```
 
-==================================================================
+- in case you faced memory over flow problem use:
+```bash
+    my_free(void *ptr); // to free specific address
+    or 
+    my_free_all(void); // to free all allocated spaces with my_malloc
+```
 
-- my_malloc: is built using malloc, you give it the size you want to allocate, \
-&emsp;&emsp;&emsp;&emsp;&emsp;it allocate it, add it to the linked list and returns its address.
+## Running Tests
 
-- my_free:   is build using free, it frees the allocated space by "my_malloc" and set it as NULL, takes pointer as parameter
 
-- my_free_all: function that free all previous allocated spaces by "my_malloc", if they aren't freed by "my_free"
+- Clone the repo
+```bash
+git clone https://github.com/mohammedhrima/my_malloc_free.git
+```
 
-==================================================================
-- how my_malloc works: \
-I created a linked list , its head is declared as static variable, that means it's stored in the data segment of the memory,
-when the program exit it automatically free the values pointed by it
+- To run tests, run the following command
+```bash
+gcc my_malloce_free/my_malloc_free.c file.c (don't forget #include "my_malloc_free/my_malloc_free.h")
+```
 
-==================================================================
-- how to use my_malloc: #include "my_malloc_free/my_malloc_free.h" \
-use it like malloc: \
-&emsp;&emsp;char *ptr0 = my_malloc(1000); \
-&emsp;&emsp;char **ptr1 = my_malloc(1000); \
-&emsp;&emsp;char ***ptr2 = my_malloc(1000); \
-&emsp;&emsp;int *ptr3 = my_malloc(1000); \
-&emsp;&emsp;...
-- compile it like this: gcc my_malloce_free/my_malloc_free.c your_file.c
-
-==================================================================
-- I added main.c , it includes a main in case you want to test the functions before using them \
 \
 \
 ![001](https://user-images.githubusercontent.com/71414472/212447316-2f09d29c-c43c-4607-964e-178c93f69fc6.png) \
