@@ -1,10 +1,11 @@
 ## my_malloc_free
 
-- memory leaks sucks
+- memory leaks and double free suck
 
-- So I built "my_malloc" to solve this problem
+- So I built "my_malloc" to solve this problems
 
 - my_malloc: function allocate a spaces in the heap and frees them when main exit automatically (you don't have to free them)
+- my_free / my_free_all: free allocated spaces and set them to NULL (in case you need them)
 
 ## Usage :
 
@@ -17,7 +18,7 @@ char  **ptr2 =  (char**)my_malloc(5000);
 char ***ptr3 = (char***)my_malloc(300);
 ```
 
-- in case you faced memory over flow problem use:
+- in case you faced memory over flow problem use: (they are allready protected from double free ;) )
 ```bash
     my_free(void *ptr); // to free specific address
     or 
