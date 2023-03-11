@@ -10,8 +10,8 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef MY_MALLOC_H
-# define MY_MALLOC_H
+#ifndef HEADER_H
+# define HEADER_H
 
 # include "limits.h"
 # include "unistd.h"
@@ -24,8 +24,8 @@ typedef struct s_mal
 	struct s_mal	*next;
 }					t_mal;
 
-uintptr_t			my_malloc(int size);
-void				my_free(void *address);
+uintptr_t			my_malloc(size_t size);
+void				my_free(uintptr_t address);
 void				my_free_all(void);
 
 #endif

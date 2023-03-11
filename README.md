@@ -17,8 +17,8 @@ int    *ptr1 =    (int*)my_malloc(2000);
 char  **ptr2 =  (char**)my_malloc(5000);
 char ***ptr3 = (char***)my_malloc(300);
                         my_free(ptr0);
-                        my_free((void *)ptr1);
-                        my_free((void *)ptr2);
+                        my_free((uintptr_t)ptr1);
+                        my_free((uintptr_t)ptr2);
 ```
 
 ## Running Tests

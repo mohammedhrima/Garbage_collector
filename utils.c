@@ -1,4 +1,4 @@
-#include "my_malloc_free.h"
+#include "header.h"
 #include <stdio.h>
 #include <stdlib.h>
 
@@ -31,7 +31,7 @@ t_mal	*the_head(void)
 
 // in case you freed a pointer before
 // I use the same pointer to save the new allocate space
-t_mal	*get_free_memory(int size)
+t_mal	*get_free_memory(size_t size)
 {
 	t_mal	*space;
 	int		index;
@@ -50,7 +50,7 @@ t_mal	*get_free_memory(int size)
 	return (space->next);
 }
 
-uintptr_t	my_malloc(int size)
+uintptr_t	my_malloc(size_t size)
 {
 	t_mal	*available_memory;
 
@@ -59,23 +59,21 @@ uintptr_t	my_malloc(int size)
 	return (available_memory->ptr);
 }
 
-void	my_free(void *address)
+void	my_free(uintptr_t address)
 {
-	uintptr_t	ptr;
 	t_mal		*my_var;
 	t_mal		*prev;
 
-	ptr = (uintptr_t)address;
 	my_var = the_head();
-	while (my_var && my_var->ptr != ptr)
+	while (my_var && my_var->ptr != address)
 	{
 		prev = my_var;
 		my_var = my_var->next;
 	}
-	if (my_var && my_var->ptr == ptr)
+	if (my_var && my_var->ptr == address)
 	{
 		prev->next = my_var->next;
-		free(address);
+		free((void *)address);
 		free(my_var);
 	}
 }
