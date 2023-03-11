@@ -1,4 +1,4 @@
-## my_malloc_free
+## my_malloc, my_free
 
 - Memory leaks and double free suck, I tried to built "my_malloc" to solve those problems
 - my_malloc: function allocate a spaces in the heap (with malloc) and frees them when main exit
