@@ -35,9 +35,11 @@ gcc C_garbage_collector/utils.c your_file.c #don't forget to include C_garbage_c
 of this data type, example:
 ``` c
 char *str; 
-str[2] = 'c'; // move 2*sizeof(char) step or we can say move 2 byte step and change the value stored there
+str[2] = 'c'; // move 2*sizeof(char) step or we can say move 2 byte step
+              // and change the character stored there to 'c'
 char **arr;
-arr[2] = "hi"; // move 2*sizeof(char*) step or we can say move 2 * (8 bytes) step and change the value stored there
+arr[2] = "hello wrold"; // move 2*sizeof(char*) step or we can say move 2 * (8 bytes) step 
+                        // and change the address stored to the address pointing to string "hello world"
 ```
 
 ```
