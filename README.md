@@ -6,7 +6,7 @@
 
 ## Usage :
 
-```javascript
+```c
 #include "C_garbage_collector/header.h"
 
 void   *ptr0 =   (void*)my_malloc(1000);
@@ -16,10 +16,9 @@ char ***ptr3 = (char***)my_malloc(300);
 ```
 
 - in case you faced memory over flow problem use:
-```bash
-    my_free(void *ptr); #to free specific address
-    or 
-    my_free_all(void); #to free all allocated spaces with my_malloc
+```c
+    my_free(void *ptr); // to free specific address
+    my_free_all(void);  // to free all allocated spaces with my_malloc
 ```
 
 ## Running Tests
@@ -37,7 +36,7 @@ gcc C_garbage_collector/utils.c your_file.c #don't forget to include C_garbage_c
 
 ## Usage :
 
-```javascript
+```c
 #include "C_garbage_collector/header.h"
 
 void   *ptr0 =   (void*)my_malloc(1000);
@@ -49,20 +48,20 @@ char ***ptr3 = (char***)my_malloc(300);
                         my_free((void *)ptr2);
 ```
 
-```bash
+## Important : (what you need to know)
+
 - void * , void**, void *** ..., are an addresses (for an allocate space in memory)
 - Those addresses are also stored in memory and have the same size
 - The number of '*' means only the level of pointer so compiler know many steps will do while navigate in the lowest level
 of this data type, example:
-    char *str -> str[2] = 'c'
-        move 2*sizeof(char) steps or we can say move 2 * 1byte steps
-        and change the value stored there
-        
-    char **arr -> arr[2] = "hi"
-        move 2*sizeof(char*) steps or we can say move 2 * 8bytes steps 
-        and change the value stored there
-        
-        !!! size of pointer depends computer architecture !!!
+``` c
+char *str; 
+str[2] = 'c'; // move 2*sizeof(char) step or we can say move 2 byte step and change the value stored there
+char **arr;
+arr[2] = "hi"; // move 2*sizeof(char*) step or we can say move 2 * (8 bytes) step and change the value stored there
+```
+```
+        !!! size of pointer depends on computer architecture !!!
         In 32-bit computer machine sizeof(pointer) is 4 bytes
         In 64-bit computer machine sizeof(pointer) is 8 bytes
 ```
