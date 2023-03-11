@@ -19,6 +19,7 @@ char ***ptr3 = (char***)my_malloc(300);
                         my_free(ptr0);
                         my_free((uintptr_t)ptr1);
                         my_free((uintptr_t)ptr2);
+                        my_free_all();
 ```
 
 ## Running Tests
