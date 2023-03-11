@@ -2,7 +2,9 @@
 
 - Memory leaks and double free suck, I tried to built "my_malloc" to solve those problems
 - my_malloc: function allocate a spaces in the heap (with malloc) and frees them when main exit
-- my_free / my_free_all: free allocated spaces (for programs that keep running and allocate space continually)
+- my_free / my_free_all:\
+&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;- for programs that keep running and allocating space continuously\
+&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;- or in case your program could exit somewhere outside the main, put my_free_all() before exit()
 
 ## Usage :
 
