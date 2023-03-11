@@ -13,39 +13,18 @@ void   *ptr0 =   (void*)my_malloc(1000);
 int    *ptr1 =    (int*)my_malloc(2000);
 char  **ptr2 =  (char**)my_malloc(5000);
 char ***ptr3 = (char***)my_malloc(300);
-```
-
-- in case you faced memory over flow problem use:
-```c
-    my_free(void *ptr); // to free specific address
-    my_free_all(void);  // to free all allocated spaces with my_malloc
+                        my_free(ptr0);
+                        my_free((void *)ptr1);
+                        my_free((void *)ptr2);
 ```
 
 ## Running Tests
 
-
-- Clone the repo
 ```bash
 git clone git clone https://github.com/mohammedhrima/C_garbage_collector.git
 ```
-
-- To run tests, run the following command
 ```bash
 gcc C_garbage_collector/utils.c your_file.c #don't forget to include C_garbage_collector/header.h
-```
-
-## Usage :
-
-```c
-#include "C_garbage_collector/header.h"
-
-void   *ptr0 =   (void*)my_malloc(1000);
-int    *ptr1 =    (int*)my_malloc(2000);
-char  **ptr2 =  (char**)my_malloc(5000);
-char ***ptr3 = (char***)my_malloc(300);
-                        my_free(ptr0);
-                        my_free((void *)ptr1);
-                        my_free((void *)ptr2);
 ```
 
 ## Important : (what you need to know)
@@ -60,13 +39,13 @@ str[2] = 'c'; // move 2*sizeof(char) step or we can say move 2 byte step and cha
 char **arr;
 arr[2] = "hi"; // move 2*sizeof(char*) step or we can say move 2 * (8 bytes) step and change the value stored there
 ```
+
 ```
         !!! size of pointer depends on computer architecture !!!
         In 32-bit computer machine sizeof(pointer) is 4 bytes
         In 64-bit computer machine sizeof(pointer) is 8 bytes
 ```
 
-\
 \
 ![001](https://user-images.githubusercontent.com/71414472/212447316-2f09d29c-c43c-4607-964e-178c93f69fc6.png) \
 \
