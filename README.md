@@ -1,15 +1,13 @@
 ## my_malloc_free
 
-- memory leaks sucks
-
-- So I built "my_malloc" to solve this problems
-
-- my_malloc: function allocate a space in the heap and frees it when main exit automatically
+- Memory leaks and double free suck, I tried to built "my_malloc" to solve those problems
+- my_malloc: function allocate a spaces in the heap (with malloc) and frees them when main exit
+- my_free / my_free_all: free allocated spaces (for programs that keep running and allocate space continually)
 
 ## Usage :
 
 ```javascript
-#include "my_malloc_free/my_malloc_free.h"
+#include "C_garbage_collector/header.h"
 
 void   *ptr0 =   (void*)my_malloc(1000);
 int    *ptr1 =    (int*)my_malloc(2000);
@@ -19,9 +17,9 @@ char ***ptr3 = (char***)my_malloc(300);
 
 - in case you faced memory over flow problem use:
 ```bash
-    my_free(void *ptr); // to free specific address
+    my_free(void *ptr); #to free specific address
     or 
-    my_free_all(void); // to free all allocated spaces with my_malloc
+    my_free_all(void); #to free all allocated spaces with my_malloc
 ```
 
 ## Running Tests
@@ -29,27 +27,18 @@ char ***ptr3 = (char***)my_malloc(300);
 
 - Clone the repo
 ```bash
-git clone https://github.com/mohammedhrima/my_malloc_free.git
+git clone git clone https://github.com/mohammedhrima/C_garbage_collector.git
 ```
 
 - To run tests, run the following command
 ```bash
-gcc my_malloce_free/my_malloc_free.c file.c (don't forget #include "my_malloc_free/my_malloc_free.h")
+gcc C_garbage_collector/utils.c your_file.c #don't forget to include C_garbage_collector/header.h
 ```
-
-## my_malloc_free
-
-- memory leaks and double free suck
-
-- So I built "my_malloc" to solve this problems
-
-- my_malloc: function allocate a spaces in the heap (with malloc) and frees them when main exit
-- my_free / my_free_all: free allocated spaces (for programs that keep running and allocate space continually)
 
 ## Usage :
 
 ```javascript
-#include "my_malloc_free/my_malloc_free.h"
+#include "C_garbage_collector/header.h"
 
 void   *ptr0 =   (void*)my_malloc(1000);
 int    *ptr1 =    (int*)my_malloc(2000);
@@ -76,19 +65,6 @@ of this data type, example:
         !!! size of pointer depends computer architecture !!!
         In 32-bit computer machine sizeof(pointer) is 4 bytes
         In 64-bit computer machine sizeof(pointer) is 8 bytes
-```
-
-
-## Running Tests
-
-- Clone the repo
-```bash
-git clone https://github.com/mohammedhrima/my_malloc_free.git
-```
-
-- To run tests, run the following command
-```bash
-gcc my_malloce_free/my_malloc_free.c file.c (don't forget #include "my_malloc_free/my_malloc_free.h")
 ```
 
 \
