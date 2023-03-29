@@ -28,7 +28,7 @@ char ***ptr3 = (char***)my_malloc(300);
 ## Running Tests
 
 ```bash
-git clone git clone https://github.com/mohammedhrima/Leaks-and-double-free-cure.git
+git clone https://github.com/mohammedhrima/Leaks-and-double-free-cure.git
 ```
 ```bash
 gcc Leaks-and-double-free-cure/utils.c your_file.c #don't forget to include Leaks-and-double-free-cure/header.h
