@@ -13,7 +13,7 @@
 ## Usage :
 
 ```c
-#include "C_garbage_collector/header.h"
+#include "Leaks-and-double-free-cure/header.h"
 
 void   *ptr0 =   (void*)my_malloc(1000);
 int    *ptr1 =    (int*)my_malloc(2000);
@@ -28,10 +28,10 @@ char ***ptr3 = (char***)my_malloc(300);
 ## Running Tests
 
 ```bash
-git clone git clone https://github.com/mohammedhrima/C_garbage_collector.git
+git clone git clone https://github.com/mohammedhrima/Leaks-and-double-free-cure.git
 ```
 ```bash
-gcc C_garbage_collector/utils.c your_file.c #don't forget to include C_garbage_collector/header.h
+gcc Leaks-and-double-free-cure/utils.c your_file.c #don't forget to include Leaks-and-double-free-cure/header.h
 ```
 
 ## Important : (what you need to know)
