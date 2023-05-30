@@ -26,10 +26,10 @@ my_frr_all();
 ## Running Tests
 
 ```bash
-git clone https://github.com/mohammedhrima/Leaks-and-double-free-cure.git 
+git clone https://github.com/mohammedhrima/Leaks-and-double-free-cure.git .
 ```
 ```bash
-gcc Leaks-and-double-free-cure/leaks_curr.c Leaks-and-double-free-cure/leaks_curr_utils.c your_file.c #don't forget to include Leaks-and-double-free-cure/header.h
+gcc leaks_curr.c leaks_curr_utils.c your_file.c #don't forget to include Leaks-and-double-free-cure/header.h
 ```
 
 ## Important : (what you need to know)
