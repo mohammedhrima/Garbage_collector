@@ -15,40 +15,27 @@
 ```c
 #include "Leaks-and-double-free-cure/header.h"
 
-void   *ptr0 =   (void*)my_malloc(1000);
-int    *ptr1 =    (int*)my_malloc(2000);
-char  **ptr2 =  (char**)my_malloc(5000);
-char ***ptr3 = (char***)my_malloc(300);
-                        my_free(ptr0);
-                        my_free((uintptr_t)ptr1);
-                        my_free((uintptr_t)ptr2);
-                        my_free_all();
+void   *ptr0 = my_malloc(1000);
+int    *ptr1 = my_malloc(2000);
+char  **ptr2 = my_malloc(5000);
+char ***ptr3 = my_malloc(300);
+my_free(ptr0);
+my_frr_all();
 ```
 
 ## Running Tests
 
 ```bash
-git clone https://github.com/mohammedhrima/Leaks-and-double-free-cure.git
+git clone https://github.com/mohammedhrima/Leaks-and-double-free-cure.git 
 ```
 ```bash
-gcc Leaks-and-double-free-cure/utils.c your_file.c #don't forget to include Leaks-and-double-free-cure/header.h
+gcc Leaks-and-double-free-cure/leaks_curr.c Leaks-and-double-free-cure/leaks_curr_utils.c your_file.c #don't forget to include Leaks-and-double-free-cure/header.h
 ```
 
 ## Important : (what you need to know)
 
 - void * , void**, void *** ..., are an addresses (for an allocate space in memory)
-- Those addresses are also stored in memory and have the same size
-- The number of '*' means only the level of pointer so compiler know many steps will do while navigate in the lowest level
-of this data type, example:
-``` c
-char *str; 
-str[2] = 'c'; // move 2*sizeof(char) step or we can say move 2 byte step
-              // and change the character stored there to 'c'
-char **arr;
-arr[2] = "hello wrold"; // move 2*sizeof(char*) step or we can say move 2 * (8 bytes) step 
-                        // and change the address stored to the address pointing to string "hello world"
-```
-
+- Those addresses have the same size
 ```
         !!! size of pointer depends on computer architecture !!!
         In 32-bit computer machine sizeof(pointer) is 4 bytes
