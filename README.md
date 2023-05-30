@@ -13,7 +13,7 @@
 ## Usage :
 
 ```c
-#include "Leaks-and-double-free-cure/header.h"
+#include "header.h"
 
 void   *ptr0 = my_malloc(1000);
 int    *ptr1 = my_malloc(2000);
