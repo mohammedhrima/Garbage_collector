@@ -1,6 +1,6 @@
 #include "header.h"
 
-void	ft_memset(void *pointer, int c, size_t len)
+void	ft_memory_set(void *pointer, int c, size_t len)
 {
 	size_t			i;
 	unsigned char	*temporary;
@@ -14,7 +14,7 @@ void	ft_memset(void *pointer, int c, size_t len)
 	}
 }
 
-void	*ft_memcpy(void *destination, void *source, size_t len)
+void	*ft_memory_copy(void *destination, void *source, size_t len)
 {
 	size_t			i;
 	unsigned char	*pointer1;

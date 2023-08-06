@@ -48,7 +48,7 @@ void	*my_malloc(size_t size)
 	int			pos;
 
 	new = malloc(size);
-	ft_memset(new, 0, size);
+	ft_memory_set(new, 0, size);
 	pos = get_available_pos();
 	curr = head();
 	curr->ptr[pos] = (uintptr_t) new;
@@ -57,7 +57,7 @@ void	*my_malloc(size_t size)
 	if (curr->pos + 2 >= curr->len)
 	{
 		ptr = malloc(curr->len * 2 * sizeof(uintptr_t));
-		ft_memcpy(ptr, curr->ptr, curr->len * sizeof(uintptr_t));
+		ft_memory_copy(ptr, curr->ptr, curr->len * sizeof(uintptr_t));
 		free(curr->ptr);
 		curr->ptr = ptr;
 		curr->len *= 2;
