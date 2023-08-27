@@ -20,7 +20,7 @@ int    *ptr1 = my_malloc(2000);
 char  **ptr2 = my_malloc(5000);
 char ***ptr3 = my_malloc(300);
 my_free(ptr0);
-my_frr_all();
+my_free_all();
 ```
 
 ## Running Tests
