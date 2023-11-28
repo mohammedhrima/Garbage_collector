@@ -1,50 +1,33 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   main.c                                             :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: mhrima <mhrima@student.42.fr>              +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/11/28 21:02:32 by mhrima            #+#    #+#             */
+/*   Updated: 2023/11/28 21:05:29 by mhrima           ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "header.h"
 
-int	main(void)
+void func()
 {
-	void	****ptr;
+	char *ptr;
 
-	ptr = my_malloc(10);
-	my_free(ptr);
-	my_free(ptr);
-	ptr = my_malloc(10);
-	ptr = my_malloc(10);
-	ptr = my_malloc(10);
-	ptr = my_malloc(10);
-	ptr = my_malloc(10);
-	ptr = my_malloc(10);
-	ptr = my_malloc(10);
-	ptr = my_malloc(10);
-	ptr = my_malloc(10);
-	ptr = my_malloc(10);
-	ptr = my_malloc(10);
-	ptr = my_malloc(10);
-	ptr = my_malloc(10);
-	ptr = my_malloc(10);
-	ptr = my_malloc(10);
-	ptr = my_malloc(10);
-	ptr = my_malloc(10);
-	ptr = my_malloc(10);
-	ptr = my_malloc(10);
-	ptr = my_malloc(10);
-	ptr = my_malloc(10);
-	ptr = my_malloc(10);
-	ptr = my_malloc(10);
-	my_free_all();
-	ptr = my_malloc(10);
-	ptr = my_malloc(10);
-	ptr = my_malloc(10);
-	ptr = my_malloc(10);
-	ptr = my_malloc(10);
-	ptr = my_malloc(10);
-	ptr = my_malloc(10);
-	ptr = my_malloc(10);
-	ptr = my_malloc(10);
-	ptr = my_malloc(10);
-	ptr = my_malloc(10);
-	ptr = my_malloc(10);
-	ptr = my_malloc(10);
-	ptr = my_malloc(10);
-	ptr = my_malloc(10);
-	system("leaks a.out");
+	ptr = allocate(100);
+	ptr = allocate(100);
+	ptr = allocate(100);
+	ptr = allocate(100);
+	ptr = allocate(100);
+	ptr = allocate(100);
+	ptr = allocate(100);
+	ptr = allocate(100);
+}
+
+int main(void)
+{
+	func();
+	free_memory();
 }

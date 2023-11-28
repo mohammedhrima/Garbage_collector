@@ -1,20 +1,29 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   header.h                                           :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: mhrima <mhrima@student.42.fr>              +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/11/28 20:49:07 by mhrima            #+#    #+#             */
+/*   Updated: 2023/11/28 20:49:45 by mhrima           ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #ifndef LC_HEADER_H
-# define LC_HEADER_H
+#define LC_HEADER_H
 
-# include <stdint.h>
-# include <stdlib.h>
+#include <stdlib.h>
+#include <string.h>
+#include <stdint.h>
 
-typedef struct s_mal
+typedef struct List_
 {
-	int			pos;
-	uintptr_t	*ptr;
-	int			len;
-}				t_mal;
+	void *ptr;
+	struct List_ *next;
+} List;
 
-void			*my_malloc(size_t size);
-void			my_free(void *address);
-void			my_free_all(void);
-void			ft_memory_set(void *pointer, int c, size_t len);
-void			*ft_memory_copy(void *destination, void *source, size_t len);
+void *allocate(size_t size);
+void free_memory();
 
 #endif
