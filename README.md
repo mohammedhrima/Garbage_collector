@@ -11,7 +11,7 @@ free_memory();
 
 ## Running Tests
 ```bash
-git clone https://github.com/mohammedhrima/Garbage_collector.git .
+git clone https://github.com/mohammedhrima/Garbage_collector.git
 ```
 ```bash
 gcc memory.c your_file.c #don't forget to include header.h
