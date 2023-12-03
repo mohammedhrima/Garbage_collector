@@ -6,13 +6,13 @@
 /*   By: mhrima <mhrima@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/28 21:02:29 by mhrima            #+#    #+#             */
-/*   Updated: 2023/11/28 21:11:13 by mhrima           ###   ########.fr       */
+/*   Updated: 2023/12/03 01:32:53 by mhrima           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "header.h"
 
-List *head_()
+List *begin()
 {
     static List *head;
 
@@ -21,12 +21,12 @@ List *head_()
     return head;
 }
 
-List *curr_()
+List *end()
 {
     static List *curr;
 
     if (curr == NULL)
-        curr = head_();
+        curr = begin();
     else
         curr = curr->next;
     return curr;
@@ -35,11 +35,10 @@ List *curr_()
 void *allocate(size_t size)
 {
     void *ptr;
-    List *head;
     List *curr;
 
     ptr = calloc(size, 1);
-    curr = curr_();
+    curr = end();
     curr->ptr = ptr;
     curr->next = calloc(1, sizeof(List));
     return ptr;
@@ -50,7 +49,7 @@ void free_memory()
     List *node;
     List *tmp;
 
-    node = head_();
+    node = begin();
     while (node)
     {
         tmp = node->next;
