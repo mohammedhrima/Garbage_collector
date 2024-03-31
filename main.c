@@ -14,16 +14,17 @@
 
 void func()
 {
-	char *ptr;
+	int *ptr;
 
-	ptr = allocate(100);
-	ptr = allocate(100);
-	ptr = allocate(100);
-	ptr = allocate(100);
-	ptr = allocate(100);
-	ptr = allocate(100);
-	ptr = allocate(100);
-	ptr = allocate(100);
+	ptr = allocate(10);
+	ptr = allocate(20);
+	ptr = allocate(30);
+	free_address(ptr);
+	ptr = allocate(40);
+	ptr = allocate(50);
+	ptr = allocate(60);
+	ptr = allocate(70);
+	ptr = allocate(80);
 }
 
 int main(void)

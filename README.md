@@ -4,6 +4,7 @@
 
 void   *ptr0 = allocate(1000);
 int    *ptr1 = allocate(2000);
+free_address(ptr1);
 char  **ptr2 = allocate(5000);
 char ***ptr3 = allocate(300);
 free_memory();

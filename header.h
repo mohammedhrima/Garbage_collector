@@ -19,11 +19,14 @@
 
 typedef struct List_
 {
-	void *ptr;
+	size_t size;
+	uintptr_t ptr;
 	struct List_ *next;
 } List;
 
 void *allocate(size_t size);
 void free_memory();
+void free_address(void *ptr);
+List **head();
 
 #endif

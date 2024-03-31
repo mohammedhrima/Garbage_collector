@@ -12,24 +12,13 @@
 
 #include "header.h"
 
-List *begin()
-{
-    static List *head;
-
-    if (head == NULL)
-        head = calloc(1, sizeof(List));
-    return head;
-}
-
-List *end()
+List **head()
 {
     static List *curr;
 
     if (curr == NULL)
-        curr = begin();
-    else
-        curr = curr->next;
-    return curr;
+        curr = calloc(1, sizeof(List));
+    return &curr;
 }
 
 void *allocate(size_t size)
@@ -38,9 +27,11 @@ void *allocate(size_t size)
     List *curr;
 
     ptr = calloc(size, 1);
-    curr = end();
-    curr->ptr = ptr;
-    curr->next = calloc(1, sizeof(List));
+    curr = calloc(1, sizeof(List));
+    curr->size = size;
+    curr->ptr = (uintptr_t)ptr;
+    curr->next = *head();
+    *head() = curr;
     return ptr;
 }
 
@@ -49,12 +40,33 @@ void free_memory()
     List *node;
     List *tmp;
 
-    node = begin();
+    node = *head();
     while (node)
     {
         tmp = node->next;
-        free(node->ptr);
+        free((void*)node->ptr);
         free(node);
         node = tmp;
     }
+}
+
+List *free_node(List *node, uintptr_t ptr)
+{
+    List *tmp;
+
+    if (node && node->ptr == ptr)
+    {
+        tmp = node->next;
+        free((void *)node->ptr);
+        free(node);
+        return tmp;
+    }
+    if (node)
+        node->next = free_node(node->next, ptr);
+    return node;
+}
+
+void free_address(void *ptr)
+{
+    *head() = free_node(*head(), (uintptr_t)ptr);
 }
